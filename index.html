@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>VueJS Tutorials</title>
-        <link href="styles.css" rel="stylesheet" />
-        <script src="https://unpkg.com/vue"></script>
-    </head>
-    <body>
-        <div id="vue-app">
-            <h1>Computed Properties</h1>
-            <button v-on:click="a++">Add to A</button>
-            <button v-on:click="b++">Add to B</button>
-            <p>A - {{ a }}</p>
-            <p>B - {{ b }}</p>
-            <p>Age + A = {{ addToA }}</p>
-            <p>Age + B = {{ addToB }}</p>
-        </div>
-    </body>
 
-    <script src="app.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>vue的computed属性</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+        <h1>Computed Properties</h1>
+        <!-- click中的a是data中的属性 -->
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <p>A - {{ a }}</p>
+        <p>B - {{ b }}</p>
+        <!-- 这里调用方法应加()，否则会被识别为data属性 -->
+        <!-- 这里绑定了addToA方法和addToB方法，所以点击按钮两个方法会同时执行，即使b没有变化 -->
+        <!-- <p>Age + A = {{ addToA() }}</p>
+        <p>Age + B = {{ addToB() }}</p> -->
+
+        <!-- 使用computed属性 -->
+        <button v-on:click="a++">Add to A</button>
+        <button v-on:click="b++">Add to B</button>
+        <p>A - {{ a }}</p>
+        <p>B - {{ b }}</p>
+        <!-- 使用computed方法，不需要加() -->
+        <!-- 不会两个方法都执行，提升了效率，实际效果与method无差别 -->
+        <p>Age + A = {{ addToA }}</p>
+        <p>Age + B = {{ addToB }}</p>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
 </html>
