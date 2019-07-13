@@ -2,8 +2,9 @@
 <template>
   <!-- template下有且仅有一个根标签 -->
   <div id="app">
-    <h1>{{title}}</h1>
+    <app-header></app-header>
     <users></users>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -12,6 +13,8 @@
 // 1).引入组件
 // import HelloWorld from "./components/HelloWorld"
 import Users from "./components/Users";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default {
   name: "app",
@@ -25,7 +28,9 @@ export default {
     // HelloWorld
     // 3).注册时，:前给定引用组件时的标签名，:后给定引入的组件名
     // :前的标签名可省略，默认首字母小写
-    users: Users
+    "users": Users,
+    "app-header": Header,
+    "app-footer": Footer,
   }
 };
 </script>
