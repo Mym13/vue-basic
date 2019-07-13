@@ -8,8 +8,9 @@ new Vue({
 
     },
     computed: {
-        compClasses: function(){
-            return{
+        compClasses: function () {
+            // 注意返回的形式
+            return {
                 available: this.available,
                 nearby: this.nearby,
             }
