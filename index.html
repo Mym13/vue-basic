@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>VueJS Tutorials</title>
-        <link href="styles.css" rel="stylesheet" />
-        <script src="https://unpkg.com/vue"></script>
-    </head>
-    <body>
-        <div id="vue-app">
-            <h1>Looping through lists</h1>
-            <ul>
-                <li v-for="character in characters">{{ character }}</li>
-            </ul>
-            <ul>
-                <li v-for="(ninja, index) in ninjas">{{ index }} . {{ ninja.name }} - {{ ninja.age }}</li>
-            </ul>
-            <!-- <div v-for="(ninja, index) in ninjas">
-                <h3>{{ index }} . {{ ninja.name }}</h3>
-                <p>Age - {{ ninja.age }}</p>
-            </div> -->
-            <template v-for="ninja in ninjas">
-                <div v-for="(val, key) in ninja">
-                    <p>{{key}} - {{ val }}</p>
-                </div>
-                <hr />
-            </template>
-        </div>
-    </body>
 
-    <script src="app.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>vue的v-for指令</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+        <h1>Looping through lists</h1>
+        <ul>
+            <li v-for="character in characters">{{ character }}</li>
+        </ul>
+        <ul>
+            <!-- index是data中ninjas数组的下标 -->
+            <li v-for="(ninja, index) in ninjas">{{ index }} . {{ ninja.name }} - {{ ninja.age }}</li>
+        </ul>
+
+        <hr>
+        
+        <!-- 下面这种形式，v-for写在div容器中，那么每遍历一次，就会创建一个div -->
+        <div v-for="(ninja, index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>Age - {{ ninja.age }}</p>
+        </div>
+
+        <!-- 将v-for写在template中，可实现和上面相同的效果，并且不会创建div -->
+        <template v-for="(ninja, index) in ninjas">
+            <h3>{{ index }} . {{ ninja.name }}</h3>
+            <p>Age - {{ ninja.age }}</p>
+        </template>>
+        
+        <hr>
+
+        <!-- 先v-for获取ninjas中的一个对象 -->
+        <template v-for="ninja in ninjas">
+            <!-- 再v-for获取每一个对象的val和key -->
+            <!-- 注意，下面这里(val, key)不能反过来 -->
+            <div v-for="(val, key) in ninja" :key="key">
+                <p>{{key}} - {{ val }}</p>
+            </div>
+            <hr />
+        </template>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
 </html>
