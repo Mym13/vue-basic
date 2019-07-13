@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>VueJS Tutorials</title>
-        <link href="styles.css" rel="stylesheet" />
-        <script src="https://unpkg.com/vue"></script>
-    </head>
-    <body>
-        <div id="vue-app">
-            <h1>Conditionals</h1>
-            <button v-on:click="error = !error">Toggle error</button>
-            <button v-on:click="success = !success">Toggle success</button>
-            <!-- <p v-if="error" class="error">There has been an error</p>
-            <p v-else-if="success" class="success">Whooo, success :)</p> -->
-            <p v-show="error" class="error">There has been an error</p>
-            <p v-show="success" class="success">Whooo, success :)</p>
-        </div>
-    </body>
 
-    <script src="app.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>vue的v-if/v-show指令</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+        <h1>Conditionals</h1>
+        <!-- 此处点击后，更改data中的属性值 -->
+        <button v-on:click="error = !error">Toggle error</button>
+        <button v-on:click="success = !success">Toggle success</button>
+
+        <!-- 此处v-if根据error的值为真或假来相应是否显示p标签 -->
+        <!-- 当v-if为假时，标签不存在于文档中 -->
+        <!-- <p v-if="error" class="error">There has been an error</p>
+        <p v-else-if="success" class="success">Whooo, success :)</p> -->
+
+        <!-- 此处v-show根据error的值为真或假来相应是否显示p标签 -->
+        <!-- 注意：当v-show为假时，标签不显示，但是还存在于文档中 -->
+        <!-- 只是增加了style="display:none"属性值 -->
+        <p v-show="error" class="error">There has been an error</p>
+        <p v-show="success" class="success">Whooo, success :)</p>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
 </html>
