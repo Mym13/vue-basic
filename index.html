@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>VueJS Tutorials</title>
+        <title>vue键盘事件</title>
         <link href="styles.css" rel="stylesheet" />
         <script src="https://unpkg.com/vue"></script>
     </head>
@@ -10,8 +10,13 @@
         <div id="vue-app">
             <h1>Keyboard Events</h1>
             <label>Name:</label>
+            <!-- 键盘事件：输入一个字符就执行一次logName方法 -->
+            <input type="text" v-on:keyup="logName" />
+            <label>Name:</label>
+            <!-- 键盘事件：输入点击一次回车就执行一次logName方法 -->
             <input type="text" v-on:keyup.enter="logName" />
             <label>Age:</label>
+            <!-- 键盘事件：输入点击一次alt+回车就执行一次logAge方法 -->
             <input type="text" v-on:keyup.alt.enter="logAge" />
         </div>
     </body>
