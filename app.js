@@ -7,7 +7,7 @@ new Vue({
         websiteTag: '<a href="http://www.thenetninja.co.uk">The Net Ninja Website</a>'
     },
     methods: {
-        greet: function(time){
+        greet: function (time) {
             return 'Good ' + time + ', ' + this.name;
         }
     }
