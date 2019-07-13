@@ -26,6 +26,7 @@ vue cli 脚手架
             npm install
             npm run dev
         
+3.  脚手架工程的进入顺序：index.html -> main.js -> App.vue
 
 # cli-project
 
