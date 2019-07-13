@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-// 实例化vue对象
 new Vue({
-    // el：需要获取的(控制的)元素，一定是html中的根容器元素
-    el: '#vue-app',
-    // data：用于数据的存储
-    data: {
-        name: 'Shaun'
-=======
-new Vue({
+    // 注册了id为vue-app的容器，该vue实例仅作用于该容器，容器之外无效
     el: '#vue-app',
     data: {
         name: 'Shaun',
         job: 'Ninja'
     },
     methods: {
-        greet: function(time){
+        // 在method中获取data的属性(name)，只需要name，相当于this.name
+        // 注意this.data.name获取不到name
+        greet: function (time) {
             return 'Good ' + time + ', ' + this.name;
         }
->>>>>>> 37d7c8803fd0f5cab57106d0a0049a388fd8c03e
     }
 });
