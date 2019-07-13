@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS Tutorials</title>
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Data Binding</h1>
+            <p><a v-bind:href="website">The Net Ninja Website</a></p>
+            <p v-html="websiteTag"></p>
+            <p><input type="text" v-bind:value="name" /></p>
+        </div>
+    </body>
 
-<head>
-    <meta charset="utf-8">
-    <title>VueJS Tutorials</title>
-    <link href="styles.css" rel="stylesheet" />
-    <script src="https://unpkg.com/vue"></script>
-</head>
-
-<body>
-    <!-- 该div之外的容器要想使用vue需要注册，目前只注册了vue-app -->
-    <div id="vue-app">
-        <h1>{{ greet('afternoon') }}</h1>
-        <p>Name: {{ name}}</p>
-        <p>Job: {{ job }}</p>
-    </div>
-</body>
-
-<script src="app.js"></script>
-
+    <script src="app.js"></script>
 </html>
