@@ -3,19 +3,24 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VueJS Tutorials</title>
+    <title>vue(触发)事件</title>
     <link href="styles.css" rel="stylesheet" />
     <script src="https://unpkg.com/vue"></script>
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>Data Binding</h1>
-        <!-- 数据绑定 -->
-        <p><a v-bind:href="website">The Net Ninja Website</a></p>
-        <!-- v-html指令可获取data的属性，并解析为html标签 -->
-        <p v-html="websiteTag"></p>
-        <p><input type="text" v-bind:value="name" /></p>
+        <h1>Events</h1>
+        <!-- v:on 相当于 @ -->
+        <!-- 单击事件 -->
+        <button v-on:click="add(1)">Add a Year</button>
+        <button v-on:click="subtract(1)">Subtract a Year</button>
+        <!-- 双击事件 -->
+        <button v-on:dblclick="add(10)">Add 10 Years</button>
+        <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+        <p>My age is {{age}}</p>
+        <!-- 鼠标移动事件 -->
+        <div id="canvas" v-on:mousemove="updateXY">{{ x }} , {{ y }}</div>
     </div>
 </body>
 
