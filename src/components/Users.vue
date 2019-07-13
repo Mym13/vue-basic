@@ -13,16 +13,24 @@
 <script>
 export default {
   name: 'users',
+  // 子组件接收父组件的传值，需要声明props属性
+  props: {
+        users: {
+            // 传值的类型  
+            type: Array,
+            required: true,
+        }
+  },
   data () {
     return {
-        users: [
-            {name:"name1",position:"Web开发1",show:false},
-            {name:"name2",position:"Web开发2",show:false},
-            {name:"name3",position:"Web开发3",show:false},
-            {name:"name4",position:"Web开发4",show:false},
-            {name:"name5",position:"Web开发5",show:false},
-            {name:"name6",position:"Web开发6",show:false},
-        ]
+        // users: [
+        //     {name:"name1",position:"Web开发1",show:false},
+        //     {name:"name2",position:"Web开发2",show:false},
+        //     {name:"name3",position:"Web开发3",show:false},
+        //     {name:"name4",position:"Web开发4",show:false},
+        //     {name:"name5",position:"Web开发5",show:false},
+        //     {name:"name6",position:"Web开发6",show:false},
+        // ]
     }
   }
 }

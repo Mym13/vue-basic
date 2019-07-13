@@ -5,10 +5,9 @@
 </template>
 <script>
 export default {
-    name: 'app-header',
     data(){
         return{
-            title: 'Vue.js Demo'
+            title: 'Vue Ninjas'
         }
     }
 }

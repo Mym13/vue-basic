@@ -7,7 +7,7 @@
 export default {
     data(){
         return{
-            copyright: 'Copyright Vue Demo'
+            copyright: 'Copyright 2017 Vue Ninjas'
         }
     }
 }
