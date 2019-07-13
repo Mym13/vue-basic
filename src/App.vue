@@ -31,5 +31,9 @@ export default {
 </script>
 
 // 3.css样式
-<style>
+// scoped表示下面的css样式只作用于当前这个组件
+<style scoped>
+  h1 {
+    color: green
+  }
 </style>
